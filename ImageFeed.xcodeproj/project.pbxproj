@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		FF782AFC2CB10BD20096C398 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782AFB2CB10BD20096C398 /* AppDelegate.swift */; };
 		FF782AFE2CB10BD20096C398 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782AFD2CB10BD20096C398 /* SceneDelegate.swift */; };
-		FF782B002CB10BD20096C398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782AFF2CB10BD20096C398 /* ViewController.swift */; };
+		FF782B002CB10BD20096C398 /* ImagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782AFF2CB10BD20096C398 /* ImagesListViewController.swift */; };
 		FF782B032CB10BD20096C398 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FF782B022CB10BD20096C398 /* Base */; };
 		FF782B052CB10BD60096C398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF782B042CB10BD60096C398 /* Assets.xcassets */; };
 		FF782B082CB10BD60096C398 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = FF782B072CB10BD60096C398 /* Base */; };
 		FF782B132CB10BD60096C398 /* ImageFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782B122CB10BD60096C398 /* ImageFeedTests.swift */; };
 		FF782B1D2CB10BD60096C398 /* ImageFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782B1C2CB10BD60096C398 /* ImageFeedUITests.swift */; };
 		FF782B1F2CB10BD60096C398 /* ImageFeedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF782B1E2CB10BD60096C398 /* ImageFeedUITestsLaunchTests.swift */; };
+		FF7D61182CB25C460079A3DA /* ImagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7D61172CB25C460079A3DA /* ImagesListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		FF782AF82CB10BD20096C398 /* ImageFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF782AFB2CB10BD20096C398 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF782AFD2CB10BD20096C398 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF782AFF2CB10BD20096C398 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF782AFF2CB10BD20096C398 /* ImagesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListViewController.swift; sourceTree = "<group>"; };
 		FF782B022CB10BD20096C398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF782B042CB10BD60096C398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF782B072CB10BD60096C398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		FF782B182CB10BD60096C398 /* ImageFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF782B1C2CB10BD60096C398 /* ImageFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedUITests.swift; sourceTree = "<group>"; };
 		FF782B1E2CB10BD60096C398 /* ImageFeedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF7D61172CB25C460079A3DA /* ImagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +101,9 @@
 		FF782AFA2CB10BD20096C398 /* ImageFeed */ = {
 			isa = PBXGroup;
 			children = (
+				FF7D611A2CB25CBC0079A3DA /* ImagesList */,
 				FF782AFB2CB10BD20096C398 /* AppDelegate.swift */,
 				FF782AFD2CB10BD20096C398 /* SceneDelegate.swift */,
-				FF782AFF2CB10BD20096C398 /* ViewController.swift */,
 				FF782B012CB10BD20096C398 /* Main.storyboard */,
 				FF782B042CB10BD60096C398 /* Assets.xcassets */,
 				FF782B062CB10BD60096C398 /* LaunchScreen.storyboard */,
@@ -125,6 +127,15 @@
 				FF782B1E2CB10BD60096C398 /* ImageFeedUITestsLaunchTests.swift */,
 			);
 			path = ImageFeedUITests;
+			sourceTree = "<group>";
+		};
+		FF7D611A2CB25CBC0079A3DA /* ImagesList */ = {
+			isa = PBXGroup;
+			children = (
+				FF782AFF2CB10BD20096C398 /* ImagesListViewController.swift */,
+				FF7D61172CB25C460079A3DA /* ImagesListCell.swift */,
+			);
+			path = ImagesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF782B002CB10BD20096C398 /* ViewController.swift in Sources */,
+				FF782B002CB10BD20096C398 /* ImagesListViewController.swift in Sources */,
+				FF7D61182CB25C460079A3DA /* ImagesListCell.swift in Sources */,
 				FF782AFC2CB10BD20096C398 /* AppDelegate.swift in Sources */,
 				FF782AFE2CB10BD20096C398 /* SceneDelegate.swift in Sources */,
 			);
