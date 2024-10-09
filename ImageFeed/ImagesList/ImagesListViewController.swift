@@ -3,15 +3,15 @@ import UIKit
 final class ImagesListViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
 
-    private let photosName: [String] = Array(0..<20).map{ "\($0)" }
-    
+    private let photosName: [String] = Array(0..<20).map { "\($0)" }
+
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         return formatter
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,12 +44,17 @@ extension ImagesListViewController {
             return
         }
 
-        cell.cellImage.image = image
-        cell.dateLabel.text = dateFormatter.string(from: Date())
+        // Используем публичный метод для установки изображения
+        cell.setImage(image)
 
+        // Используем публичный метод для установки даты
+        let dateText = dateFormatter.string(from: Date())
+        cell.setDate(dateText)
+
+        // Используем публичный метод для установки иконки лайка
         let isLiked = indexPath.row % 2 == 0
         let likeImage = isLiked ? UIImage(named: "like_button_on") : UIImage(named: "like_button_off")
-        cell.likeButton.setImage(likeImage, for: .normal)
+        cell.setLikeButtonImage(likeImage)
     }
 }
 
@@ -60,7 +65,7 @@ extension ImagesListViewController: UITableViewDelegate {
         guard let image = UIImage(named: photosName[indexPath.row]) else {
             return 0
         }
-        
+
         let imageInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
         let imageViewWidth = tableView.bounds.width - imageInsets.left - imageInsets.right
         let imageWidth = image.size.width
